@@ -8,8 +8,8 @@ angular.module 'forageCcApp'
       link: '/'
     }
     {
-      title: 'Receipts'
-      link: '/receipts'
+      title: 'Recipes'
+      link: '/recipes'
     }
   ]
   $scope.isCollapsed = true
