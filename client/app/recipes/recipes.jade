@@ -1,5 +1,15 @@
 div(ng-include='"components/navbar/navbar.html"')
-.col-md-12
-    | This is the recipes view.
+
+.recipes
+  .row.row-centered  
+    .col-md-6.col-centered
+      h1.text-center
+        |Choose a recipe:
+      ul.list-group.recipe-list
+        a(href='#'): li.list-group-item
+          .recipe-image
+            img(src='{{forageRecipe.data.recipe.img}}' width='100')
+          {{forageRecipe.data.recipe.name}}
+          div(style='clear: both')
 
 div(ng-include='"app/common-footer/common-footer.html"')

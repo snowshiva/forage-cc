@@ -24,12 +24,24 @@ body {
     color: #F5F5F5;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+    background: rgba(118,141,59,1);
 }
 
 .footer {
     text-align: center;
     padding: 30px 0;
-    margin-top: 70px;
+    margin-top: 50px;
     border-top: 1px solid #E5E5E5;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
 }

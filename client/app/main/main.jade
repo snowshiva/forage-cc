@@ -2,17 +2,54 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    h1 Forage Code Challenge:
-    p.lead Create a recipe app that ingests and displays recipes
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+    h1 Code Challenge
+    p.lead Create an interactive recipe viewer
+    <i class="fa fa-cutlery fa-5x"></i>
 
 .container
-  .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in awesomeThings')
-        li
-          a(href='#', tooltip='{{thing.info}}')
-            | {{thing.name}}
+  h1.page-header Instructions:
+  p 
+    |For this challenge you are asked to build an interactive recipe 
+    |viewer that creates an immersive experience for people to follow 
+    |a recipe on their phone, tablet or computer. The viewer should be 
+    |web­-based and should highlight your knowledge of responsive design 
+    |as well as knowledge and skills with HTML, CSS, Sass/Less, Bootstrap 
+    |or similar grid­based framework, JavaScript, web fonts and frontend 
+    |libraries like jQuery and Angular.
+  
+  p(style='white-space:pre;')
+    |The app should injest JSON in the following format:
+    |https://api.forage.co/v1/recipe/view?recipe_id=109121
+  
+  p
+    |JSONP is also available by adding a callback GET variable. Here 
+    |are some alternative recipe ID’s that can be used for testing: 
+    |109121, 109131, 109141, 108241, 108781, 108651
+  
+  p
+    |The app should show each step of the recipe in a large, easy to read 
+    |font. The user should be able to progress through each step with a 
+    |swipe/tap of the screen or a click/keypress. The last step should be 
+    |the image of the dish for plating inspiration. Steps that contain a 
+    |reference to time, should initiate a timer that is preset to the 
+    |correct amount of time and should stay visible and countdown until 
+    |it’s finished, while the user progresses through remaining steps.
+
+  p
+    |The viewer should be aesthetically pleasing, but it doesn’t have to 
+    |match our exact styles or design.
+
+  p
+    |Feel free to add extra features you think would be fun or useful. 
+    |Some ideas might be calling out the ingredients, tools or techniques 
+    |required or adding support for future multimedia content that could 
+    |be included in the recipe.
+  //- .row
+  //-   .col-lg-12
+  //-     h1.page-header Features:
+  //-     ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in awesomeThings')
+  //-       li
+  //-         a(href='#', tooltip='{{thing.info}}')
+  //-           | {{thing.name}}
             
 div(ng-include='"app/common-footer/common-footer.html"')
