@@ -65,7 +65,7 @@ module.exports = function (grunt) {
       },
       injectCss: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
+          '<%= yeoman.client %>/{app,components,sass}/**/*.css'
         ],
         tasks: ['injector:css']
       },
@@ -82,12 +82,12 @@ module.exports = function (grunt) {
       },
       injectSass: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
+          '<%= yeoman.client %>/{app,components,sass}/**/*.{scss,sass}'],
         tasks: ['injector:sass']
       },
       sass: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}'],
+          '<%= yeoman.client %>/{app,components,sass}/**/*.{scss,sass}'],
         tasks: ['sass', 'autoprefixer']
       },
       jade: {
@@ -535,7 +535,8 @@ module.exports = function (grunt) {
           loadPath: [
             '<%= yeoman.client %>/bower_components',
             '<%= yeoman.client %>/app',
-            '<%= yeoman.client %>/components'
+            '<%= yeoman.client %>/components',
+            '<%= yeoman.client %>/sass'
           ],
           compass: false
         },
@@ -576,6 +577,7 @@ module.exports = function (grunt) {
           transform: function(filePath) {
             filePath = filePath.replace('/client/app/', '');
             filePath = filePath.replace('/client/components/', '');
+            filePath = filePath.replace('/client/sass/', '');
             return '@import \'' + filePath + '\';';
           },
           starttag: '// injector',
@@ -583,7 +585,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/app/app.scss': [
-            '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}',
+            '<%= yeoman.client %>/{app,components,sass}/**/*.{scss,sass}',
             '!<%= yeoman.client %>/app/app.{scss,sass}'
           ]
         }
