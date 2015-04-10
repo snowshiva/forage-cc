@@ -3,8 +3,14 @@
 angular.module 'forageCcApp'
 .controller 'NavbarCtrl', ($scope, $location) ->
   $scope.menu = [
-    title: 'Home'
-    link: '/'
+    {
+      title: 'Home'
+      link: '/'
+    }
+    {
+      title: 'Receipts'
+      link: '/receipts'
+    }
   ]
   $scope.isCollapsed = true
 
