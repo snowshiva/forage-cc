@@ -7,3 +7,4 @@ angular.module 'forageCcApp'
     url: '/'
     templateUrl: 'app/main/main.html'
     controller: 'MainCtrl'
+
