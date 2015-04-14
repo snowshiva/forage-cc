@@ -1,15 +1,19 @@
 div(ng-include='"components/navbar/navbar.html"')
 
+
+    <div >Click here</div>
+</div>
+
 .recipes
   .row.row-centered  
     .col-md-6.col-centered
       h1.text-center
         |Choose a recipe:
       ul.list-group.recipe-list
-        a(href='#'): li.list-group-item
+        li.list-group-item(ng-click="getRecipe(recipe.name)" ng-repeat='recipe in recipes')
           .recipe-image
-            img(src='{{forageRecipe.data.recipe.img}}' width='100')
-          |{{forageRecipe.data.recipe.name}}
+            img(src='{{recipe.img}}' width='100')
+          |{{recipe.name}}
           div(style='clear: both')
 
 div(ng-include='"app/common-footer/common-footer.html"')
